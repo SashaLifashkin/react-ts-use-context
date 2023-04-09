@@ -28,6 +28,7 @@ const translations: Translations = {
     }
 };
 
-export const getTranslation = <T extends keyof Translations>(lang: T, text: string): string => {
+// export const getTranslation = <T extends keyof Translations>(lang: T, text: string): string => {
+export const getTranslation = (lang: Lang, text: string): string => {
     return translations[lang][text];
 }
