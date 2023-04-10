@@ -1,14 +1,13 @@
 import React from 'react';
 import { getTranslation } from '../../data/translation';
-import { Lang } from '../../types/types';
+import { LangContext } from '../LangContext';
 
-type Props = {
-    lang: Lang;
-};
+export class Footer extends React.Component {
+    static contextType = LangContext;
+    context!: React.ContextType<typeof LangContext>
 
-export class Footer extends React.Component<Props> {
     render () {
-        const lang = this.props.lang;
+        const lang = this.context;
 
         return (
             <footer className='footer'>{getTranslation(lang, 'footer.text')}</footer>

@@ -1,27 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { getTranslation } from '../../data/translation';
-import { Lang } from '../../types/types';
+import { LangContext } from '../LangContext';
 
-type Props = {
-    lang: Lang;
-};
-
-export const HomePage: React.FC<Props> = ({ lang }) => {
+export const HomePage: React.FC = () => {
     return (
         <section className='homepage'>
-            <HomePageTitle lang={lang} />
-            <HomePageContext lang={lang} />
+            <HomePageTitle />
+            <HomePageContext />
         </section>
     );
 };
 
-const HomePageTitle: React.FC<Props> = ({ lang }) => {
+const HomePageTitle: React.FC = () => {
+    const lang = useContext(LangContext);
+
     return (
         <h1>{getTranslation(lang, 'homePage.title')}</h1>
     );
 };
 
-const HomePageContext: React.FC<Props> = ({ lang }) => {
+const HomePageContext: React.FC = () => {
+    const lang = useContext(LangContext);
+
     return (
         <section>{getTranslation(lang, 'homePage.context')}</section>
     );
