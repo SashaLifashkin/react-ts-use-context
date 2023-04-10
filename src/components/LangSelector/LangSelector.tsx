@@ -1,12 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { LangContext } from '../LangContext';
 import { Lang } from '../../types/types';
 
-type Props = {
-    lang: Lang;
-    setLang: (value: Lang) => void;
-}
+export const LangSelector: React.FC = () => {
+    const { lang, setLang } = useContext(LangContext);
 
-export const LangSelector: React.FC<Props> = ({ lang, setLang }) => {
     return (
         <select
             value={lang}
