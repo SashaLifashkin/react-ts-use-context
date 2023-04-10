@@ -7,7 +7,7 @@ export class Footer extends React.Component {
     context!: React.ContextType<typeof LangContext>
 
     render () {
-        const lang = this.context;
+        const { lang } = this.context;
 
         return (
             <footer className='footer'>{getTranslation(lang, 'footer.text')}</footer>

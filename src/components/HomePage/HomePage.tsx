@@ -12,7 +12,7 @@ export const HomePage: React.FC = () => {
 };
 
 const HomePageTitle: React.FC = () => {
-    const lang = useContext(LangContext);
+    const { lang } = useContext(LangContext);
 
     return (
         <h1>{getTranslation(lang, 'homePage.title')}</h1>
@@ -20,7 +20,7 @@ const HomePageTitle: React.FC = () => {
 };
 
 const HomePageContext: React.FC = () => {
-    const lang = useContext(LangContext);
+    const { lang } = useContext(LangContext);
 
     return (
         <section>{getTranslation(lang, 'homePage.context')}</section>
