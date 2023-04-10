@@ -2,14 +2,25 @@ import React, { useContext } from 'react';
 import { getTranslation } from '../../data/translation';
 import { LangContext } from '../LangContext';
 
-export const HomePage: React.FC = () => {
-    return (
-        <section className='homepage'>
-            <HomePageTitle />
-            <HomePageContext />
-        </section>
-    );
-};
+// export const HomePage: React.FC = () => {
+//     return (
+//         <section className='homepage'>
+//             <HomePageTitle />
+//             <HomePageContext />
+//         </section>
+//     );
+// };
+
+export const HomePage = React.memo(
+    () => {
+        return (
+            <section className='homepage'>
+                <HomePageTitle />
+                <HomePageContext />
+            </section>
+        );
+    }
+);
 
 const HomePageTitle: React.FC = () => {
     const { lang } = useContext(LangContext);

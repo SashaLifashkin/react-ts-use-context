@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Lang } from '../types/types';
 
 type ContextValue = {
@@ -14,10 +14,17 @@ export const LangContext = React.createContext<ContextValue>({
 export const LangProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
     const [lang, setLang] = useState<Lang>('en');
 
-    const contextValue: ContextValue = {
-        lang,
-        setLang,
-    }
+    // const contextValue: ContextValue = {
+    //     lang,
+    //     setLang,
+    // }
+
+    const contextValue = useMemo(() => {
+        return {
+            lang,
+            setLang,
+        };
+    }, [lang]);
 
     return (
         <LangContext.Provider value={contextValue}>
