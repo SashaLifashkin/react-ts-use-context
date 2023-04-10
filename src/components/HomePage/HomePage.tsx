@@ -11,7 +11,7 @@ import { LangContext } from '../LangContext';
 //     );
 // };
 
-export const HomePage = React.memo(
+export const HomePage: React.NamedExoticComponent = React.memo(
     () => {
         return (
             <section className='homepage'>
